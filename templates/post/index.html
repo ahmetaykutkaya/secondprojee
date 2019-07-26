@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block bady %}
+
+    {% for post in posts %}
+    {{ post.id }}<br>
+   <a href="{% url 'detail' id=post.id %}"> {{ post.title }}</a><br>
+    {{ post.content }}<br>
+    {{ post.publicing_date}}<br>
+
+    {% endfor %}
+
+{% endblock %}

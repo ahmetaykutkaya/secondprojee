@@ -1,0 +1,83 @@
+{% extends 'post/base.html' %}
+
+  {% block body %}
+
+
+  <div class="container">
+
+  <form class="needs-validation" novalidate>
+    <div class="form-row">
+    <div class="col-md-6 mb-1">
+      <label for="validationCustom01">ADI:</label>
+      <input type="text" class="form-control" id="validationCustom01" name="ad" placeholder="Adınız....." value="" required>
+      <div class="valid-feedback">
+        Geçerli
+      </div>
+    </div>
+    <div class="col-md-6 mb-1">
+      <label for="validationCustom02">SOYADI:</label>
+      <input type="text" class="form-control" id="validationCustom02" name="soyad" placeholder="Soyadınız....." value="" required>
+      <div class="valid-feedback">
+        Geçerli
+      </div>
+    </div>
+
+    </div>
+
+
+  <div class="container">
+  <div class="form-row">
+    <div class="col-md-5 mb-4 ">
+      <label for="validationCustom02">TC:</label>
+      <input type="text" class="form-control" id="validationCustom04" name="tc" placeholder="TcKimlik....." value="" required>
+      <div class="invalid-feedback">
+        Lütfen boş alanları doldurunuzz!!
+      </div>
+        </div>
+       </div>
+        </div>
+
+
+  <select class=" col-md-4 col-mb-2 custom-select custom-select-lg mb-3" name="silah">
+  <option selected>Silahınız</option>
+  <option value="1">G3</option>
+  <option value="2">AK-47</option>
+  <option value="3">BORA-12</option>
+  <option value="4">RPG-7</option>
+  <option value="5">MP-5</option>
+  <option value="6">MPT-76</option>
+
+  </select>
+
+  <select class=" col-md-5 custom-select custom-select-sm" name="rutbe">
+  <option selected>Rütbeniz</option>
+  <option value="1">Er-Erbaş</option>
+  <option value="2">Uzman</option>
+  <option value="3">Astsubay</option>
+  <option value="4">Subay</option>
+
+
+  </select>
+
+      <div class="form-row">
+    <div class="col-7  col-md-5">
+        <label for="validationCustom04">Seri no:</label>
+      <input type="text" class="form-control" placeholder="Serino..." name="seri">
+  </div>
+  </div>
+
+
+
+  </form>
+
+
+
+
+    <h1>Yeni post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Kaydet</button>
+    </form>
+
+    {% endblock %}
+

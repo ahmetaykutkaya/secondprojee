@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block bady %}
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+ {{ post.id }}<br>
+    {{ post.title }}<br>
+    {{ post.content }}<br>
+    {{ post.publicing_date}}<br>
+
+{% endblock %}
